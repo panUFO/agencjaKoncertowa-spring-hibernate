@@ -6,7 +6,8 @@ import java.util.List;
 
 public interface ZespolManager {
 
-    void addZespol(Zespol zespol);
+  //  void addZespol(Zespol zespol);
+    Zespol addZespol(Zespol zespol);
     List<Zespol> getAllZespols();
     Zespol getZespolByID(Long id);
     void updateZespol(Zespol zespol);

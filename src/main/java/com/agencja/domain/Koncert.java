@@ -20,7 +20,7 @@ public class Koncert {
     private String nazwa_koncertu;
     private double ceny_biletow;
 
-    private List<Klub> kluby = new ArrayList<Klub>();
+    private Klub klub;
 
 
     public Long getIdKoncert() {
@@ -47,13 +47,13 @@ public class Koncert {
         this.ceny_biletow = ceny_biletow;
     }
 
-    // Be careful here, both with lazy and eager fetch type
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    public List<Klub> getKluby() {
-        return kluby;
+    @ManyToOne
+    @JoinColumn(name = "idKlub")
+    public Klub getKlub() {
+        return klub;
     }
-    public void setKluby(List<Klub> kluby) {
-        this.kluby = kluby;
+    public void setKlub(Klub klub) {
+        this.klub = klub;
     }
 
 }

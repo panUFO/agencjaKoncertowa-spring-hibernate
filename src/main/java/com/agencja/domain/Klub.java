@@ -22,7 +22,7 @@ public class Klub {
     private String nazwa;
     private int ilosc_miejsc;
 
-  //  private List<Koncert> koncerts = new ArrayList<Koncert>();
+    private List<Koncert> koncerts = new ArrayList<Koncert>();
 
     public Klub() {
     }
@@ -66,7 +66,7 @@ public class Klub {
         this.ilosc_miejsc = ilosc_miejsc;
     }
 
-/*
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "klub")
 
     public List<Koncert> getKoncerts() {
@@ -75,5 +75,5 @@ public class Klub {
     public void setKoncerts(List<Koncert> koncerts) {
         this.koncerts = koncerts;
     }
-*/
+
 }

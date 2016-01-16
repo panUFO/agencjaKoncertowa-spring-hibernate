@@ -22,11 +22,19 @@ public class ZespolManagerImpl implements ZespolManager {
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-
+/*
     @Override
     public void addZespol(Zespol zespol){
         zespol.setIdZespol(null);
         sessionFactory.getCurrentSession().persist(zespol);
+    }
+*/
+    @Override
+    public Zespol addZespol(Zespol zespol) {
+
+        long idZespol = ((Long)sessionFactory.getCurrentSession().save(zespol)).longValue();
+        zespol.setIdZespol(idZespol);
+        return zespol;
     }
 
     @Override
